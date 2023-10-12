@@ -62,7 +62,7 @@ Contributions are welcome! If you want to enhance the project, please follow the
 3. Make your changes and ensure they pass any existing tests.
 4. Submit a pull request explaining your changes.
 
-##License
+## License
 
 This project is licensed under the [Do What The F\*ck You Want To Public License (WTFPL)](LICENSE). You are free to do whatever the f\*ck you want with this code.
 
