@@ -38,6 +38,14 @@ h1, h2, h3 {
     border: 2px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
+    text-align: right;
+}
+
+#result[type="text"] {
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
 }
 
 .button-container {
