@@ -23,6 +23,8 @@ This is a comprehensive calculator project that utilizes JavaScript, HTML, and C
 
 ## Getting Started
 
+To try out the project, you can access the live version at [LINK](https://guacamoley.github.io/calculator/).
+
 ### Prerequisites
 
 - A modern web browser (Chrome, Firefox, Safari, etc.).
