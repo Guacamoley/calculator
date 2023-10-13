@@ -37,12 +37,31 @@ function operate(operator, num1, num2) {
 
 buttons.forEach(function (button) {
   button.addEventListener("click", function () {
-    if (button.className === "digits") {
-      populateDisplay(button);
+    switch (true) {
+      case button.classList.contains("digits"):
+        populateDisplay(button);
+        break;
+
+      case button.classList.contains("all-clear"):
+        clearDisplay();
+        firstNumber = 0;
+        secondNumber = 0;
+        break;
+
+      case button.className === "clear":
+        clearDisplay();
+        break;
+
+      default:
+        return;
     }
   });
 });
 
 function populateDisplay(button) {
   display.value += button.textContent;
+}
+
+function clearDisplay() {
+  display.value = "";
 }
