@@ -1,10 +1,42 @@
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
 }
 
 h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
 }
+
+.digits, .all-clear, .clear, .operators, .decimal {
+    aspect-ratio: 1;
+    height: 3%;
+    width: 3%;
+    border-radius: 100%;
+    background-color: #b3b3b3a4;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.equals {
+    aspect-ratio: 2;
+    height: 3%;
+    width: 6%;
+    border-radius: 25px;
+    background-color: #b3b3b3a4;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#result {
+    aspect-ratio: 4;
+    width: 15%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 
 footer {
     text-align: center;
@@ -18,3 +50,4 @@ footer {
 #github-link {
     float: left; /* Positions the GitHub icon on the right */
 }
+
