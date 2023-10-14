@@ -1,8 +1,8 @@
 const display = document.getElementById("result");
 const buttons = document.querySelectorAll("button");
-let currentDisplayValue = "";
-let numHolder = "";
-let operator = "";
+let num1 = "";
+let num2 = "";
+let currentOperator = "";
 
 function add(a, b) {
   return a + b;
@@ -41,13 +41,22 @@ buttons.forEach(function (button) {
   button.addEventListener("click", function () {
     switch (true) {
       case button.classList.contains("digits"):
+        if (currentOperator !== "" && num2 === "") {
+          clearDisplay();
+        }
         populateDisplay(button.textContent);
-        currentDisplayValue += button.textContent;
+        if (currentOperator === "") {
+          num1 += button.textContent;
+        } else {
+          num2 += button.textContent;
+        }
         break;
 
       case button.classList.contains("all-clear"):
         clearDisplay();
-        currentDisplayValue = "";
+        num1 = "";
+        num2 = "";
+        currentOperator = "";
         break;
 
       case button.className === "clear":
@@ -55,20 +64,35 @@ buttons.forEach(function (button) {
         break;
 
       case button.className === "operators":
-        populateDisplay(button.textContent);
-        numHolder = currentDisplayValue;
-        operator = button.textContent;
-        currentDisplayValue = "";
-        clearDisplay();
+        if (num1 !== "" && num2 !== "") {
+          // If both numbers and an operator are already set, calculate and display the result
+          const result = operate(currentOperator, num1, num2);
+          clearDisplay();
+          populateDisplay(result);
+          num1 = result;
+          num2 = "";
+          currentOperator = button.textContent;
+        } else {
+          // If it's the first operator input or after a calculation, store the operator
+          currentOperator = button.textContent;
+          if (num1 === "") {
+            num1 = currentDisplayValue;
+          }
+          clearDisplay();
+        }
         break;
 
       case button.className === "equals":
-        clearDisplay();
-        total = operate(operator, numHolder, currentDisplayValue);
-        currentDisplayValue = "";
-        numHolder = "";
-        operator = "";
-        populateDisplay(total);
+        if (num1 !== "" && num2 !== "") {
+          const result = operate(currentOperator, num1, num2);
+          clearDisplay();
+          populateDisplay(result);
+          num1 = result;
+          num2 = "";
+          currentOperator = "";
+        }
+        break;
+
       default:
         return;
     }
