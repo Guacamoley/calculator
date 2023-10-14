@@ -67,6 +67,10 @@ button {
     height: 50px;
 }
 
+.backspace {
+    display: none;
+}
+
 button:hover {
     background-color: #555;
 }
