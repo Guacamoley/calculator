@@ -1,5 +1,7 @@
 # Calculator Project
 
+![Calculator](images/calculator-screenshot.png)
+
 This is a comprehensive calculator project that utilizes JavaScript, HTML, and CSS to create a user-friendly and feature-rich calculator. This README provides an overview of the project, instructions on how to set it up, and guidance on customization and further development.
 
 ## Table of Contents
@@ -16,10 +18,22 @@ This is a comprehensive calculator project that utilizes JavaScript, HTML, and C
 ## Features
 
 - Basic arithmetic operations (addition, subtraction, multiplication, division).
-- Support for complex mathematical expressions.
+- Support for chaining multiple calculations.
 - Clear button to reset the calculator.
 - Responsive and visually appealing design.
 - Error handling for invalid input.
+- Full keyboard functionality.
+
+## Calculator Buttons:
+0-9: Input the digits 0 through 9.
++: Input the addition operator.
+-: Input the subtraction operator.
+*: Input the multiplication operator.
+/: Input the division operator.
+. (Decimal Point): Input a decimal point.
+Enter: Calculate the result.
+Escape: Clear the entire calculator.
+Backspace: Delete the last entered digit or operator.
 
 ## Getting Started
 
