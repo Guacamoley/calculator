@@ -71,6 +71,11 @@ button:hover {
     background-color: #555;
 }
 
+.operators:hover, .equals:hover, .all-clear:hover, .clear:hover{
+    background-color: #3ccce6;
+    color: #fff;
+}
+
 footer {
     text-align: center;
     margin-top: 20px; /* Adjust the value as needed */
