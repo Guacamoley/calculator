@@ -2,7 +2,7 @@
 
 ![Calculator](images/calculator-screenshot.png)
 
-This is a comprehensive calculator project that utilizes JavaScript, HTML, and CSS to create a user-friendly and feature-rich calculator. This README provides an overview of the project, instructions on how to set it up, and guidance on customization and further development.
+This is a comprehensive calculator project that utilizes JavaScript, HTML, and CSS to create a basic and user-friendly calculator app. This README provides an overview of the project, instructions on how to set it up, and guidance on customization and further development.
 
 ## Table of Contents
 
