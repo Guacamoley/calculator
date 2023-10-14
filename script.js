@@ -103,6 +103,7 @@ buttons.forEach(function (button) {
 
       case button.className === "clear":
         clearDisplay();
+        currentOperator === "" ? (num1 = "") : (num2 = "");
         break;
 
       default:
