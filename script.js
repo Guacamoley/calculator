@@ -1,40 +1,34 @@
 const display = document.getElementById("result");
 const buttons = document.querySelectorAll("button");
+let isDecimal = false;
 let num1 = "";
 let num2 = "";
 let currentOperator = "";
 
-function add(a, b) {
-  return a + b;
-}
-
-function subtract(a, b) {
-  return a - b;
-}
-
-function multiply(a, b) {
-  return a * b;
-}
-
-function divide(a, b) {
-  return a / b;
-}
-
 function operate(operator, num1, num2) {
-  num1 = parseInt(num1, 10);
-  num2 = parseInt(num2, 10);
+  num1 = new Decimal(num1);
+  num2 = new Decimal(num2);
+  let result;
+
   switch (operator) {
     case "+":
-      return add(num1, num2);
+      result = num1.plus(num2);
+      break;
     case "-":
-      return subtract(num1, num2);
+      result = num1.minus(num2);
+      break;
     case "×":
-      return multiply(num1, num2);
+      result = num1.times(num2);
+      break;
     case "÷":
-      return divide(num1, num2);
+      result = num1.dividedBy(num2);
+      break;
     default:
       return "Invalid operator";
   }
+
+  // Round the result to 10 decimal places
+  return result.toDecimalPlaces(4).toString();
 }
 
 buttons.forEach(function (button) {
@@ -52,18 +46,8 @@ buttons.forEach(function (button) {
         }
         break;
 
-      case button.classList.contains("all-clear"):
-        clearDisplay();
-        num1 = "";
-        num2 = "";
-        currentOperator = "";
-        break;
-
-      case button.className === "clear":
-        clearDisplay();
-        break;
-
       case button.className === "operators":
+        isDecimal = false;
         if (num1 !== "" && num2 !== "") {
           // If both numbers and an operator are already set, calculate and display the result
           const result = operate(currentOperator, num1, num2);
@@ -82,6 +66,21 @@ buttons.forEach(function (button) {
         }
         break;
 
+      case button.className === "decimal":
+        if (!isDecimal) {
+          if (currentOperator === "") {
+            isDecimal = true;
+            num1 += button.textContent;
+            populateDisplay(button.textContent);
+          } else {
+            isDecimal = true;
+            num2 += button.textContent;
+            populateDisplay(button.textContent);
+          }
+        }
+
+        break;
+
       case button.className === "equals":
         if (num1 !== "" && num2 !== "") {
           const result = operate(currentOperator, num1, num2);
@@ -90,7 +89,20 @@ buttons.forEach(function (button) {
           num1 = result;
           num2 = "";
           currentOperator = "";
+          isDecimal = false;
         }
+        break;
+
+      case button.classList.contains("all-clear"):
+        clearDisplay();
+        num1 = "";
+        num2 = "";
+        currentOperator = "";
+        isDecimal = false;
+        break;
+
+      case button.className === "clear":
+        clearDisplay();
         break;
 
       default:
@@ -99,10 +111,12 @@ buttons.forEach(function (button) {
   });
 });
 
+// Populates display
 function populateDisplay(textToDisplay) {
   display.value += textToDisplay;
 }
 
+// Function to clear display
 function clearDisplay() {
   display.value = "";
 }
