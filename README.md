@@ -7,6 +7,7 @@ This is a comprehensive calculator project that utilizes JavaScript, HTML, and C
 ## Table of Contents
 
 - [Features](#features)
+- [Calculator Buttons](#calculator-buttons)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -25,15 +26,16 @@ This is a comprehensive calculator project that utilizes JavaScript, HTML, and C
 - Full keyboard functionality.
 
 ## Calculator Buttons:
-0-9: Input the digits 0 through 9.
-+: Input the addition operator.
--: Input the subtraction operator.
-*: Input the multiplication operator.
-/: Input the division operator.
-. (Decimal Point): Input a decimal point.
-Enter: Calculate the result.
-Escape: Clear the entire calculator.
-Backspace: Delete the last entered digit or operator.
+
+- 0-9: Input the digits 0 through 9.
+- +: Input the addition operator.
+- -: Input the subtraction operator.
+- *: Input the multiplication operator.
+- /: Input the division operator.
+- . (Decimal Point): Input a decimal point.
+- Enter: Calculate the result.
+- Escape: Clear the entire calculator.
+- Backspace: Delete the last entered digit or operator.
 
 ## Getting Started
 
